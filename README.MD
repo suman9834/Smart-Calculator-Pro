@@ -118,7 +118,7 @@ You don't need any framework or package installation to run this project.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+git clone https://github.com/suman9834/Smart-Calculator-Pro.git
 ```
 
 ### 2. Open the Project
