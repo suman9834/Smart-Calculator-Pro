@@ -1,0 +1,1129 @@
+/* ===========================================
+   SMART CALCULATOR PRO
+   CSS PART - 1
+=========================================== */
+
+/* ========== Google Font ========== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ========== Root Variables ========== */
+
+:root {
+
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+
+    --text: #ffffff;
+    --text-light: #cbd5e1;
+
+    --glass: rgba(255, 255, 255, .08);
+
+    --border: rgba(255, 255, 255, .15);
+
+    --shadow: 0 20px 60px rgba(0, 0, 0, .35);
+
+    --radius: 24px;
+
+}
+
+/* ========== Reset ========== */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    font-family: "Poppins", sans-serif;
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background: linear-gradient(135deg,
+            #0f172a,
+            #1e293b,
+            #312e81);
+
+}
+
+/* ========== Animated Background ========== */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: -1;
+
+}
+
+.blob {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    opacity: .55;
+
+    animation: float 15s infinite ease-in-out;
+
+}
+
+.blob1 {
+
+    width: 340px;
+    height: 340px;
+
+    background: #6366f1;
+
+    top: -80px;
+    left: -60px;
+
+}
+
+.blob2 {
+
+    width: 420px;
+    height: 420px;
+
+    background: #06b6d4;
+
+    right: -120px;
+    top: 150px;
+
+    animation-delay: 2s;
+
+}
+
+.blob3 {
+
+    width: 300px;
+    height: 300px;
+
+    background: #ec4899;
+
+    bottom: -80px;
+    left: 35%;
+
+    animation-delay: 4s;
+
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+
+        transform: translateY(0px);
+
+    }
+
+    50% {
+
+        transform: translateY(-40px);
+
+    }
+
+}
+
+/* ========== Container ========== */
+
+.container {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 35px;
+
+}
+
+/* ========== Calculator Card ========== */
+
+.calculator {
+
+    width: 430px;
+
+    background: var(--glass);
+
+    backdrop-filter: blur(22px);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 28px;
+
+    box-shadow: var(--shadow);
+
+}
+
+/* ========== Header ========== */
+
+.calculator-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+.calculator-header h1 {
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+}
+
+.calculator-header p {
+
+    color: var(--text-light);
+
+    margin-top: 4px;
+
+    font-size: 14px;
+
+}
+
+/* Theme Button */
+
+.theme-btn {
+
+    width: 52px;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: .35s;
+
+}
+
+.theme-btn:hover {
+
+    transform: rotate(30deg) scale(1.1);
+
+    background: var(--primary-dark);
+
+}
+
+/* ========== Display ========== */
+
+.display {
+
+    background: rgba(255, 255, 255, .06);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    text-align: right;
+
+    margin-bottom: 22px;
+
+    overflow: hidden;
+
+}
+
+.history-display {
+
+    color: var(--text-light);
+
+    font-size: 18px;
+
+    min-height: 28px;
+
+    word-break: break-word;
+
+}
+
+.main-display {
+
+    font-size: 48px;
+
+    font-weight: 700;
+
+    margin-top: 10px;
+
+    word-break: break-word;
+
+}
+
+/* ========== Tool Buttons ========== */
+
+.tool-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+}
+
+.tool-buttons button {
+
+    flex: 1;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, .08);
+
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transition: .3s;
+
+}
+
+.tool-buttons button:hover {
+
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, .15);
+
+}
+
+.tool-buttons i {
+
+    font-size: 16px;
+
+}
+
+/* ========== Memory Panel ========== */
+
+.memory-panel {
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+
+}
+
+.memory {
+
+    height: 52px;
+    font-size: 16px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, .08);
+
+}
+
+/* ===========================================
+   CALCULATOR KEYPAD
+=========================================== */
+
+.calculator-keys {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+/* ===========================================
+   BUTTONS
+=========================================== */
+
+.btn {
+
+    height: 70px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, .08);
+
+    color: #fff;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, .1),
+        0 8px 20px rgba(0, 0, 0, .15);
+
+}
+
+.btn:hover {
+
+    transform: translateY(-4px);
+
+    background: rgba(255, 255, 255, .15);
+
+}
+
+.btn:active {
+
+    transform: scale(.95);
+
+}
+
+/* ===========================================
+   BUTTON COLORS
+=========================================== */
+
+.operator {
+
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+
+}
+
+.operator:hover {
+
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+
+}
+
+.equal {
+
+    background: linear-gradient(135deg, #10b981, #059669);
+
+}
+
+.equal:hover {
+
+    background: linear-gradient(135deg, #059669, #047857);
+
+}
+
+.danger {
+
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+
+}
+
+.warning {
+
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+
+}
+
+.zero {
+
+    grid-column: span 2;
+
+}
+
+/* ===========================================
+   SCIENTIFIC PANEL
+=========================================== */
+
+.scientific-panel {
+
+    display: none;
+
+    margin-top: 25px;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+
+}
+
+.scientific-panel.show {
+
+    display: grid;
+
+}
+
+.scientific {
+
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+
+}
+
+/* ===========================================
+   HISTORY PANEL
+=========================================== */
+
+.history-panel {
+
+    width: 340px;
+
+    background: var(--glass);
+
+    backdrop-filter: blur(22px);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 25px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.history-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+.history-header h2 {
+
+    font-size: 24px;
+
+}
+
+.history-header button {
+
+    width: 46px;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background: var(--danger);
+
+    color: white;
+
+    transition: .3s;
+
+}
+
+.history-header button:hover {
+
+    transform: rotate(15deg);
+
+}
+
+/* ===========================================
+   HISTORY LIST
+=========================================== */
+
+#historyList {
+
+    list-style: none;
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    max-height: 520px;
+
+    padding-right: 8px;
+
+}
+
+#historyList li {
+
+    background: rgba(255, 255, 255, .07);
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    margin-bottom: 12px;
+
+    font-size: 15px;
+
+    transition: .25s;
+
+}
+
+#historyList li:hover {
+
+    background: rgba(255, 255, 255, .12);
+
+}
+
+.empty-history {
+
+    text-align: center;
+
+    color: #cbd5e1;
+
+}
+
+/* ===========================================
+   HISTORY FOOTER
+=========================================== */
+
+.history-footer {
+
+    margin-top: 20px;
+
+}
+
+.history-footer button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.history-footer button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+/* ===========================================
+   CUSTOM SCROLLBAR
+=========================================== */
+
+#historyList::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+#historyList::-webkit-scrollbar-thumb {
+
+    background: #6366f1;
+
+    border-radius: 20px;
+
+}
+
+#historyList::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+/* ===========================================
+   CSS PART - 3 (FINAL)
+=========================================== */
+
+/* ===========================
+   LIGHT THEME
+=========================== */
+
+body.light{
+
+    background:#eef2ff;
+    color:#111827;
+
+}
+
+body.light .calculator,
+body.light .history-panel{
+
+    background:rgba(255,255,255,.85);
+
+    border:1px solid rgba(0,0,0,.08);
+
+}
+
+body.light .display{
+
+    background:#f8fafc;
+
+}
+
+body.light .history-display{
+
+    color:#64748b;
+
+}
+
+body.light .main-display{
+
+    color:#111827;
+
+}
+
+body.light .btn{
+
+    background:#f1f5f9;
+
+    color:#111827;
+
+}
+
+body.light .memory {
+
+    background: #e2e8f0;
+
+}
+
+body.light .tool-buttons button{
+
+    background:#f8fafc;
+
+    color:#111827;
+
+}
+
+body.light #historyList li{
+
+    background:#f8fafc;
+
+    color:#111827;
+
+}
+
+/* ===========================
+   RIPPLE EFFECT
+=========================== */
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn span.ripple{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    transform:scale(0);
+
+    animation:ripple .6s linear;
+
+    background:rgba(255,255,255,.4);
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(5);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+   FADE ANIMATION
+=========================== */
+
+.fade-up{
+
+    animation:fadeUp .7s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+   TOAST
+=========================== */
+
+.toast{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    background:#10b981;
+
+    color:white;
+
+    padding:15px 22px;
+
+    border-radius:14px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.35s;
+
+    z-index:1000;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+}
+
+/* ===========================
+   LOADING SPINNER
+=========================== */
+
+.loader{
+
+    width:40px;
+
+    height:40px;
+
+    border:4px solid rgba(255,255,255,.2);
+
+    border-top:4px solid white;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ===========================
+   BUTTON PRESS
+=========================== */
+
+.btn:active{
+
+    transform:scale(.92);
+
+}
+
+/* ===========================
+   DISPLAY ANIMATION
+=========================== */
+
+.main-display{
+
+    transition:.25s;
+
+}
+
+.main-display.update{
+
+    animation:pop .25s ease;
+
+}
+
+@keyframes pop{
+
+0%{
+
+transform:scale(.9);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1100px){
+
+.container{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.history-panel{
+
+width:430px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.container{
+
+padding:20px;
+
+}
+
+.calculator{
+
+width:100%;
+
+}
+
+.history-panel{
+
+width:100%;
+
+}
+
+.main-display{
+
+font-size:38px;
+
+}
+
+.btn{
+
+height:65px;
+
+font-size:20px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.calculator{
+
+padding:18px;
+
+}
+
+.history-panel{
+
+padding:18px;
+
+}
+
+.calculator-header h1{
+
+font-size:22px;
+
+}
+
+.main-display{
+
+font-size:32px;
+
+}
+
+.history-display{
+
+font-size:15px;
+
+}
+
+.btn{
+
+height:58px;
+
+font-size:18px;
+
+border-radius:14px;
+
+}
+
+.tool-buttons{
+
+flex-direction:column;
+
+}
+
+.tool-buttons button{
+
+width:100%;
+
+}
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+text-align:center;
+
+padding:20px;
+
+color:#cbd5e1;
+
+font-size:14px;
+
+}
+
+/* ===========================
+   SELECTION
+=========================== */
+
+::selection{
+
+background:#6366f1;
+
+color:white;
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#6366f1;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:transparent;
+
+}
+
+.display{
+
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+align-items:flex-end;
+
+}
+
+.main-display{
+
+font-size:64px;
+font-weight:700;
+text-align:right;
+
+}
+
+.history-display{
+
+font-size:20px;
+
+}
+
+

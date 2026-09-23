@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Smart Calculator Pro</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Animated Background -->
+
+    <div class="background">
+      <span class="blob blob1"></span>
+      <span class="blob blob2"></span>
+      <span class="blob blob3"></span>
+    </div>
+
+    <!-- Main Container -->
+
+    <main class="container">
+      <!-- ================= Calculator ================= -->
+
+      <section class="calculator">
+        <!-- Header -->
+
+        <header class="calculator-header">
+  <div>
+    <h1>Smart Calculator</h1>
+    <p>Edition</p>
+  </div>
+
+  <button id="themeBtn" class="theme-btn">
+    <i class="fa-solid fa-moon"></i>
+  </button>
+</header>
+
+        <!-- Display -->
+
+        <section class="display">
+          <div id="historyDisplay" class="history-display">0</div>
+
+          <div id="mainDisplay" class="main-display">0</div>
+        </section>
+
+        <!-- Top Tools -->
+
+        <section class="tool-buttons">
+          <button id="copyBtn">
+            <i class="fa-regular fa-copy"></i>
+
+            <span>Copy</span>
+          </button>
+
+          <button id="historyBtn">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            <span>History</span>
+          </button>
+
+          <button id="scientificBtn">
+            <i class="fa-solid fa-square-root-variable"></i>
+
+            <span>Scientific</span>
+          </button>
+        </section>
+
+        <!-- Memory Controls -->
+
+        <section class="memory-panel">
+          <button class="btn memory" data-value="MC">MC</button>
+          <button class="btn memory" data-value="MR">MR</button>
+          <button class="btn memory" data-value="M+">M+</button>
+          <button class="btn memory" data-value="M-">M-</button>
+        </section>
+
+        <!-- Calculator Keypad -->
+
+        <section class="calculator-keys">
+          <!-- Row 1 -->
+          <button class="btn danger" data-value="AC">AC</button>
+
+          <button class="btn warning" data-value="DEL">
+            <i class="fa-solid fa-delete-left"></i>
+          </button>
+
+          <button class="btn operator" data-value="%">%</button>
+
+          <button class="btn operator" data-value="/">÷</button>
+
+          <!-- Row 2 -->
+          <button class="btn number" data-value="1">1</button>
+          <button class="btn number" data-value="2">2</button>
+          <button class="btn number" data-value="3">3</button>
+          <button class="btn operator" data-value="+">+</button>
+
+          <!-- Row 3 -->
+          <button class="btn number" data-value="4">4</button>
+          <button class="btn number" data-value="5">5</button>
+          <button class="btn number" data-value="6">6</button>
+          <button class="btn operator" data-value="-">−</button>
+
+          <!-- Row 4 -->
+          <button class="btn number" data-value="7">7</button>
+          <button class="btn number" data-value="8">8</button>
+          <button class="btn number" data-value="9">9</button>
+          <button class="btn operator" data-value="*">×</button>
+
+          <!-- Row 5 -->
+          <button class="btn zero number" data-value="0">0</button>
+
+          <button class="btn number" data-value=".">.</button>
+
+          <button class="btn equal" data-value="=">=</button>
+        </section>
+
+        <!-- Scientific Panel -->
+
+        <section id="scientificPanel" class="scientific-panel">
+          <button class="btn scientific" data-value="sqrt(">√</button>
+          <button class="btn scientific" data-value="(">(</button>
+          <button class="btn scientific" data-value=")">)</button>
+          <button class="btn scientific" data-value="**">xʸ</button>
+
+          <button class="btn scientific" data-value="Math.PI">π</button>
+          <button class="btn scientific" data-value="Math.E">e</button>
+          <button class="btn scientific" data-value="Math.sin(">sin</button>
+          <button class="btn scientific" data-value="Math.cos(">cos</button>
+
+          <button class="btn scientific" data-value="Math.tan(">tan</button>
+          <button class="btn scientific" data-value="Math.log10(">log</button>
+          <button class="btn scientific" data-value="Math.log(">ln</button>
+          <button class="btn scientific" data-value="Math.sqrt(">√x</button>
+        </section>
+      </section>
+
+      <!-- ================= History ================= -->
+
+      <aside id="historyPanel" class="history-panel">
+        <div class="history-header">
+          <h2>
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            History
+          </h2>
+
+          <button id="clearHistory">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+
+        <ul id="historyList">
+          <li class="empty-history">No calculations yet</li>
+        </ul>
+
+        <div class="history-footer">
+          <button id="downloadHistory">
+            <i class="fa-solid fa-download"></i>
+
+            Export History
+          </button>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Ripple Effect -->
+
+    <div id="ripple-container"></div>
+
+    <!-- Audio -->
+
+    <audio id="clickSound" preload="auto">
+      <source src="assets/sounds/click.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
